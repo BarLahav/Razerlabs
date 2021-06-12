@@ -1,0 +1,13 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      
+      - run:
+          name: Run tests
+          # This assumes pytest is installed via the install-package step above
+          command: python main.py
